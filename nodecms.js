@@ -2,6 +2,8 @@ var express = require('express');
 
 var app = express();
 
+var fortune = require(__dirname + '/lib/fortune.js');
+
 //set up handlebars
 
 var handlebars = require('express-handlebars').create({defaultLayout: 'main'});
@@ -13,20 +15,12 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(__dirname + '/public'));
 
-var fortunes = [
-	"Concuer your fears",
-	"Stalin is a deamon",
-	"Fucking awesome",
-	"RipnDip"
-];
-
 app.get('/', function(req, res) {
 	res.render('home');
 });
 
 app.get('/about', function(req, res) {
-	var randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)]
-	res.render('about', {fortune: randomFortune});
+	res.render('about', {fortune: fortune.getFortune()});
 })
 
 app.use(function(req, res, next) {
