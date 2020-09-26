@@ -2,15 +2,23 @@
   "name": "nodecms",
   "version": "1.0.0",
   "description": "Node CMS",
-  "main": "nodecms.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Karbic/nodeCMS.git"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@popperjs/core": "^2.5.2",
+    "bootstrap": "^4.5.2",
     "express": "^4.17.1",
-    "express-handlebars": "^5.1.0"
+    "express-handlebars": "^5.1.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
